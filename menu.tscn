@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvhv0s7t0m3qu"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_jpui5"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jpui5")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/ExitButton" to="." method="_on_exit_button_pressed"]

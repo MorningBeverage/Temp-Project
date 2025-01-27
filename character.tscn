@@ -6,11 +6,16 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xbj5f"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Character" type="CharacterBody3D"]
 script = ExtResource("1_w0c0x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_g2ark")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_xbj5f")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

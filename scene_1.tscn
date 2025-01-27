@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://7uer2j682v5u"]
+[gd_scene load_steps=9 format=3 uid="uid://7uer2j682v5u"]
 
 [ext_resource type="PackedScene" uid="uid://bphpgffntyn2l" path="res://character.tscn" id="1_et77c"]
+[ext_resource type="Script" path="res://scene_root.gd" id="1_qv4ep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_55a4x"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,7 +26,8 @@ size = Vector2(16, 16)
 [sub_resource type="BoxShape3D" id="BoxShape3D_v41s3"]
 size = Vector3(16, 1, 16)
 
-[node name="Node3D" type="Node3D"]
+[node name="Scene1" type="Node3D"]
+script = ExtResource("1_qv4ep")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7dapj")
@@ -44,8 +46,5 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_v41s3")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.939298, 0.343102, 0, -0.343102, 0.939298, 0, 4, 16)
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_et77c")]
+[node name="Character" parent="." instance=ExtResource("1_et77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
